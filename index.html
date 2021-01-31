@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body>
+
+<div class="container-fluid " style="background-color:turquoise">
+    <header>
+    	<title>Game Troop</title>
+        <h1>Troop calculation</h1>
+    </header>
+    <center><label><h2> Number of soldiers</h2></label>
+    <input type="text" name="number1" id="number1" placeholder="enter single digit number" value="1"> <br>
+    
+    <button type="button" class="btn btn-info" onclick="submit1()">submit</button><br><br>
+    <div class="screen" id="screen1">Archer </div> <img src="icons8-arquero-50.png" alt="" style="width:28px;height:29px;">
+    <div class="screen" id="screen2">Swordsmen </div><img src="https://img.icons8.com/wired/64/000000/sword.png "/ style="width:28px;height:29px;">
+    <div class="screen" id="screen3">Spearmen </div><img src="https://img.icons8.com/ios-glyphs/30/000000/iron-age-warrior.png"/ style="width:28px;height:29px;">
+    <div class="screen" id="screen4"> Your Troop </div>
+</div> <!-- End Container-->
+</center>
+
+
+<script src="test_2-Dateien/jquery.js"></script>
+<script>
+$( document ).ready(function() {
+
+});
+function submit1(){
+var a =  document.getElementById("number1").value;
+var swm = 0;
+var spm = 0;
+var arc = 0;
+var dummy;
+for(i=0;i<a;i++){
+	   dummy=Math.random();
+	   if(dummy<1./3.){arc=arc+1;}
+			     else if(dummy<2./3.){swm=swm+1;}
+						    else{spm=spm+1;}
+						    
+						    
+	   }
+	   
+var Troop = arc + swm + spm;
+
+document.getElementById("screen1").innerHTML='Archer '+arc;
+document.getElementById("screen2").innerHTML='Swordsmen '+swm;
+document.getElementById("screen3").innerHTML='Spearmen '+spm;
+document.getElementById("screen4").innerHTML='Troop '+Troop;
+}
+</script>
+</body></html>
